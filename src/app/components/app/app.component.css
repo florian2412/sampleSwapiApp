@@ -1,0 +1,20 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.secondary {
+  color: rgba(0,0,0,0.54);
+}
+
+md-sidenav-layout {
+  background: rgba(0,0,0,0.03);
+}
+
+.card-container {
+  flex-flow: row wrap;
+}
+
+md-sidenav {
+  width: 300px;
+}

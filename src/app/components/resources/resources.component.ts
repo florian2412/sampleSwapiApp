@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { CharacterModel } from "./model/character.model";
-import { FilmModel } from "./model/film.model";
-import { PlanetModel } from "./model/planet.model";
-import { StarshipModel } from "./model/starship.model";
-import { SpecieModel } from "./model/specie.model";
-import { VehiculeModel } from "./model/vehicule.model";
-import { SwapiService } from './services/swapi.service';
+import { CharacterModel } from "../../model/character.model";
+import { FilmModel } from "../../model/film.model";
+import { PlanetModel } from "../../model/planet.model";
+import { StarshipModel } from "../../model/starship.model";
+import { SpecieModel } from "../../model/specie.model";
+import { VehiculeModel } from "../../model/vehicule.model";
+import { SwapiService } from '../../services/swapi.service';
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 
-import { ResourcesEnum } from './resources.enum';
+import { ResourcesEnum } from '../../utils/resources.enum';
 
 
 

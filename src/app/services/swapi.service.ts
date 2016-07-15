@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import { CharacterModel } from '../model/character.model';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
-import { ResourcesEnum } from "../resources.enum";
+import { ResourcesEnum } from "../utils/resources.enum";
 
 
 @Injectable()
