@@ -4,6 +4,8 @@ import { Character } from '../character';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import { ResourcesEnum } from "../resources.enum";
+
 
 @Injectable()
 export class SwapiService {
@@ -11,18 +13,9 @@ export class SwapiService {
   private baseUrl = 'http://swapi.co/api/';  // URL to web api
   private outputFormat = '?format=json';
 
-  /*
-   private people = 'people/';
-   private films = 'films/';
-   private planets = 'planets/';
-   private species = 'species/';
-   private starships = 'starships/';
-   private vehicles = 'vehicles/';
-   */
-
   constructor(private http: Http) {}
 
-  public getResourceById(resource: string, id: number): Observable<Character> {
+  public getResourceById(resource: ResourcesEnum, id: number): Observable<Character> {
     let completeUrl = this.baseUrl + resource + '/' + id + this.outputFormat;
     return this.http
       .get(completeUrl)
@@ -35,7 +28,7 @@ export class SwapiService {
   }
 
 
-  public getResourceList(resource: string): Observable<any> {
+  public getResourceList(resource: ResourcesEnum): Observable<any> {
     let completeUrl = this.baseUrl + resource + '/' + this.outputFormat;
     return this.http
       .get(completeUrl)
