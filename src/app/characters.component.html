@@ -1,13 +1,14 @@
 <h2>Characters</h2>
 
 <input [(ngModel)]="idCharacterToSearch">
-<button (click)="getCharacterById(idCharacterToSearch)">Get character</button>
 
-<button (click)="getCharacters()">Get many characters</button>
+<button md-raised-button  color="primary" (click)="getCharacterById(idCharacterToSearch)">Get character</button>
+
+<button md-raised-button  color="primary" (click)="getCharacters()">Get many characters</button>
 
 
 <div>{{ characterSearched | json }}</div>
-
+<br>
 
 
 <div>{{ characters | json }}</div>
