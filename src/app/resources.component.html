@@ -1,0 +1,71 @@
+<!--
+<div>
+  <label>Character's id to search</label>
+  <input [(ngModel)]="idCharacterToSearch">
+  <button md-raised-button color="primary" (click)="getCharacterById(idCharacterToSearch)">Get character</button>
+</div>
+-->
+
+<br>
+
+<div>
+  <button md-raised-button color="primary" (click)="getCharacters()">Get characters</button>
+  <button md-raised-button color="primary" (click)="getFilms()">Get films</button>
+  <button md-raised-button color="primary" (click)="getPlanets()">Get planets</button>
+  <button md-raised-button color="primary" (click)="getSpecies()">Get species</button>
+  <button md-raised-button color="primary" (click)="getStarships()">Get starships</button>
+  <button md-raised-button color="primary" (click)="getVehicules()">Get vehicules</button>
+</div>
+
+<br>
+
+<div [hidden]="charactersIsHidden">
+  <md-nav-list>
+    <md-list-item *ngFor="let character of characters">
+      <a md-line href="showInfo(character)">{{ character.name }}</a>
+    </md-list-item>
+  </md-nav-list>
+</div>
+
+<div [hidden]="filmsIsHidden">
+  <md-nav-list>
+    <md-list-item *ngFor="let film of films">
+      <a md-line href="showInfo(film)">{{ film.title }}</a>
+    </md-list-item>
+  </md-nav-list>
+</div>
+
+
+<div [hidden]="planetsIsHidden">
+  <md-nav-list>
+    <md-list-item *ngFor="let planet of planets">
+      <a md-line href="showInfo(character)">{{ planet.name }}</a>
+    </md-list-item>
+  </md-nav-list>
+</div>
+
+<div [hidden]="speciesIsHidden">
+  <md-nav-list>
+    <md-list-item *ngFor="let specie of species">
+      <a md-line href="showInfo(character)">{{ specie.name }}</a>
+    </md-list-item>
+  </md-nav-list>
+</div>
+
+<div [hidden]="starshipsIsHidden">
+  <md-nav-list>
+    <md-list-item *ngFor="let starship of starships">
+      <a md-line href="showInfo(character)">{{ starship.name }}</a>
+    </md-list-item>
+  </md-nav-list>
+</div>
+
+<div [hidden]="vehiculesIsHidden">
+  <md-nav-list>
+    <md-list-item *ngFor="let vehicule of vehicules">
+      <a md-line href="showInfo(character)">{{ vehicule.name }}</a>
+    </md-list-item>
+  </md-nav-list>
+</div>
+
+
