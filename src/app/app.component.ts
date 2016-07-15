@@ -18,8 +18,10 @@ export class AppComponent {
     name : 'Florian'
   };
 
-  constructor(title: Title) {
-    title.setTitle("Swapi App");
+  constructor(titlePage: Title) {
+    let title = "Sample Angular2 + Swapi";
+    titlePage.setTitle(title);
+    this.title = title;
   }
 
 
