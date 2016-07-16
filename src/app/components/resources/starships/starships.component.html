@@ -1,0 +1,20 @@
+<md-card>
+
+  <md-card-title>Starships</md-card-title>
+
+  <md-card-content>
+
+    <div *ngIf="starships">
+      <md-nav-list>
+        <md-list-item *ngFor="let starship of starships">
+          <a md-line href="showInfo(starship)">{{ starship.name }}</a>
+        </md-list-item>
+      </md-nav-list>
+    </div>
+
+  </md-card-content>
+
+</md-card>
+
+
+

@@ -1,1 +1,28 @@
-<h1>Characters component</h1>
+<md-card>
+
+  <md-card-title>Characters</md-card-title>
+  <!--<md-card-subtitle>Choose resource</md-card-subtitle>-->
+
+  <md-card-content>
+
+    <div *ngIf="characters">
+      <md-nav-list>
+        <md-list-item *ngFor="let character of characters">
+          <a md-line href="showInfo(character)">{{ character.name }}</a>
+        </md-list-item>
+      </md-nav-list>
+    </div>
+
+
+  </md-card-content>
+
+  <!--
+  <md-card-actions layout="row" layout-align="end center">
+    <button md-raised-button color="primary" (click)="goHome()">Back</button>
+  </md-card-actions>
+  -->
+
+</md-card>
+
+
+

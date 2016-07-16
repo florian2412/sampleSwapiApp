@@ -1,0 +1,20 @@
+<md-card>
+
+  <md-card-title>Species</md-card-title>
+
+  <md-card-content>
+
+    <div *ngIf="species">
+      <md-nav-list>
+        <md-list-item *ngFor="let specie of species">
+          <a md-line href="showInfo(specie)">{{ specie.name }}</a>
+        </md-list-item>
+      </md-nav-list>
+    </div>
+
+  </md-card-content>
+
+</md-card>
+
+
+

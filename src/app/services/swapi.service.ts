@@ -31,9 +31,10 @@ export class SwapiService {
     return this.http
       .get(completeUrl)
       .map(response => {
-        console.log(response.json());
+        console.log(response);
         return response.json();
       })
+      .map(response => response.results)
       .catch(this.handleError);
   }
 

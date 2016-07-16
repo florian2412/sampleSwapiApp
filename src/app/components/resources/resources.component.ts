@@ -4,7 +4,7 @@ import { FilmModel } from "../../model/film.model";
 import { PlanetModel } from "../../model/planet.model";
 import { StarshipModel } from "../../model/starship.model";
 import { SpecieModel } from "../../model/specie.model";
-import { VehiculeModel } from "../../model/vehicule.model";
+import { VehiculeModel } from "../../model/vehicle.model";
 import { SwapiService } from '../../services/swapi.service';
 import { ResourcesEnum } from '../../utils/resources.enum';
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
@@ -45,12 +45,20 @@ export class ResourcesComponent implements OnInit {
   ngOnInit() { }
 
   /**
-   * Navigation
+   * Navigation to a resource
    *
    * @param resource
    */
   goTo(resource: string) {
     this.router.navigate(['/resources/' + resource]);
+  }
+
+  /**
+   *
+   * Navigate to Home
+   */
+  goHome() {
+    this.router.navigate(['/home']);
   }
 
   getCharacterById(id: number) {

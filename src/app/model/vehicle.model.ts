@@ -1,4 +1,4 @@
-export class VehiculeModel {
+export class VehicleModel {
   name: string; // The name of this vehicle. The common name, such as "Sand Crawler" or "Speeder bike".
   model: string; // The model or official name of this vehicle. Such as "All-Terrain Attack Transport".
   vehicle_class: string; // The class of this vehicle, such as "Wheeled" or "Repulsorcraft".

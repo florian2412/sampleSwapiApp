@@ -1,0 +1,20 @@
+<md-card>
+
+  <md-card-title>Vehicles</md-card-title>
+
+  <md-card-content>
+
+    <div *ngIf="vehicles">
+      <md-nav-list>
+        <md-list-item *ngFor="let vehicle of vehicles">
+          <a md-line href="showInfo(vehicle)">{{ vehicle.name }}</a>
+        </md-list-item>
+      </md-nav-list>
+    </div>
+
+  </md-card-content>
+
+</md-card>
+
+
+

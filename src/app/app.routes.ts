@@ -8,6 +8,10 @@ import { FilmDetailComponent } from "./components/resources/films/film-detail.co
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { provideRouter, RouterConfig } from '@angular/router';
+import { PlanetsComponent } from "./components/resources/planets/planets.component";
+import { SpeciesComponent } from "./components/resources/species/species.component";
+import { StarshipsComponent } from "./components/resources/starships/starships.component";
+import { VehiclesComponent } from "./components/resources/vehicles/vehicles.component";
 
 const routes: RouterConfig = [
   { path: '', component: AppComponent },
@@ -17,6 +21,10 @@ const routes: RouterConfig = [
   { path: 'resources/characters/detail', component: CharacterDetailComponent },
   { path: 'resources/films', component: FilmsComponent },
   { path: 'resources/films/detail', component: FilmDetailComponent },
+  { path: 'resources/planets', component: PlanetsComponent },
+  { path: 'resources/species', component: SpeciesComponent },
+  { path: 'resources/starships', component: StarshipsComponent },
+  { path: 'resources/vehicles', component: VehiclesComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent }
 ];
