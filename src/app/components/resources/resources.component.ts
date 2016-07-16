@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CharacterModel } from "../../model/character.model";
 import { FilmModel } from "../../model/film.model";
 import { PlanetModel } from "../../model/planet.model";
@@ -13,12 +13,12 @@ import { ROUTER_DIRECTIVES } from "@angular/router";
 
 @Component({
   moduleId: module.id,
-  selector: 'ns-resources',
+  selector: 'my-resources',
   templateUrl: 'resources.component.html',
   directives: [ ROUTER_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_LIST_DIRECTIVES ]
 })
 
-export class ResourcesComponent {
+export class ResourcesComponent implements OnInit {
 
   characters: Array<CharacterModel>;
   films: Array<FilmModel>;
@@ -41,12 +41,25 @@ export class ResourcesComponent {
 
   constructor(private swapiService: SwapiService) {}
 
+  ngOnInit() { }
+
   getCharacterById(id: number) {
     return this.swapiService
       .getResourceById(ResourcesEnum.PEOPLE, id)
       .subscribe(
         response => this.characterSearched = response,
-        error => console.log('Something went wrong : ' + error),
+        error => this.handleError(error),
+        () => console.log('Done')
+      );
+  }
+
+  // TODO test this method
+  getResourceByResourceAndId(resource: ResourcesEnum, id: number) {
+    return this.swapiService
+      .getResourceById(resource, id)
+      .subscribe(
+        response => this.characterSearched = response,
+        error => this.handleError(error),
         () => console.log('Done')
       );
   }
@@ -60,7 +73,7 @@ export class ResourcesComponent {
           this.characters = response.results;
           this.charactersIsHidden = false;
         },
-        error => console.log('Something went wrong : ' + error),
+        error => this.handleError(error),
         () => console.log('Done')
       );
   }
@@ -74,7 +87,7 @@ export class ResourcesComponent {
           this.films = response.results;
           this.filmsIsHidden = false;
         },
-        error => console.log('Something went wrong : ' + error),
+        error => this.handleError(error),
         () => console.log('Done')
       );
   }
@@ -88,7 +101,7 @@ export class ResourcesComponent {
           this.planets = response.results;
           this.planetsIsHidden = false;
         },
-        error => console.log('Something went wrong : ' + error),
+        error => this.handleError(error),
         () => console.log('Done')
       );
   }
@@ -102,7 +115,7 @@ export class ResourcesComponent {
           this.vehicules = response.results;
           this.vehiculesIsHidden = false;
         },
-        error => console.log('Something went wrong : ' + error),
+        error => this.handleError(error),
         () => console.log('Done')
       );
   }
@@ -116,7 +129,7 @@ export class ResourcesComponent {
           this.species = response.results;
           this.speciesIsHidden = false;
         },
-        error => console.log('Something went wrong : ' + error),
+        error => this.handleError(error),
         () => console.log('Done')
       );
   }
@@ -130,7 +143,7 @@ export class ResourcesComponent {
           this.starships = response.results;
           this.starshipsIsHidden = false;
         },
-        error => console.log('Something went wrong : ' + error),
+        error => this.handleError(error),
         () => console.log('Done')
       );
   }
@@ -142,6 +155,11 @@ export class ResourcesComponent {
     this.speciesIsHidden = true;
     this.starshipsIsHidden = true;
     this.vehiculesIsHidden = true;
+  }
+
+  private handleError(error: any) {
+    console.error('An error occurred', error);
+    return Promise.reject(error.message || error);
   }
 
 }

@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from "@angular/router";
 
 @Component({
   moduleId: module.id,
-  selector: 'ns-main',
+  selector: 'my-main',
   templateUrl: 'main.component.html',
   directives: [ ROUTER_DIRECTIVES ]
 })
 export class MainComponent {
 
   constructor() {}
+
+  ngOnInit() { }
 
 }

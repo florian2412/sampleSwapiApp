@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from "@angular/router";
 import { ResourcesComponent } from '../resources/resources.component';
 import { Title } from '@angular/platform-browser';
@@ -16,29 +16,8 @@ import { MdIcon, MdIconRegistry } from '@angular2-material/icon';
   viewProviders: [Title],
   providers: [ MdIconRegistry ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title: string;
-
-  views: Object[] = [{
-      name: "Characters",
-      icon: "assignment ind"
-    },{
-      name: "Films",
-      icon: "assignment ind"
-    },{
-      name: "Planets",
-      icon: "assignment ind"
-    },{
-      name: "Species",
-      icon: "assignment ind"
-    },{
-      name: "Starships",
-      icon: "assignment ind"
-    }, {
-      name: "Vehicules",
-      icon: "assignment ind"
-    }
-  ];
 
   constructor(titlePage: Title) {
     let title = "Sample Angular2 + Swapi";
@@ -46,6 +25,7 @@ export class AppComponent {
     this.title = title;
   }
 
+  ngOnInit() { }
 
 
 }

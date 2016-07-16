@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { CharacterModel } from '../model/character.model';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/catch';
 import { ResourcesEnum } from "../utils/resources.enum";
+import 'rxjs/add/operator/catch';
 
 
 @Injectable()
@@ -14,7 +13,7 @@ export class SwapiService {
 
   constructor(private http: Http) {}
 
-  public getResourceById(resource: ResourcesEnum, id: number): Observable<CharacterModel> {
+  public getResourceById(resource: ResourcesEnum, id: number): Observable<any> {
     let completeUrl = this.baseUrl + resource + '/' + id + this.outputFormat;
     return this.http
       .get(completeUrl)

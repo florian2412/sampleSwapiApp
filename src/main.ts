@@ -7,7 +7,6 @@ import { SwapiService } from "./app/services/swapi.service";
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import 'rxjs/add/operator/map';
 
-
 if (environment.production) {
   enableProdMode();
 }
@@ -21,5 +20,6 @@ bootstrap(
     disableDeprecatedForms(),
     provideForms()
   ]
-);
+)
+  .catch(err => console.error(err));
 
