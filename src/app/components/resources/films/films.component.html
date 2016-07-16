@@ -7,12 +7,16 @@
     <div *ngIf="films">
       <md-nav-list>
         <md-list-item *ngFor="let film of films">
-          <a md-line href="showInfo(film)">{{ film.title}}</a>
+          <a md-line (click)="showDetail(film.url)">{{ film.title}}</a>
         </md-list-item>
       </md-nav-list>
     </div>
 
   </md-card-content>
+
+  <md-card-actions layout="row" layout-align="end center">
+    <button md-raised-button color="primary" (click)="goBack()">Back</button>
+  </md-card-actions>
 
 </md-card>
 

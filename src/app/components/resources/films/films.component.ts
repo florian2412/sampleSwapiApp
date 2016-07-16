@@ -5,6 +5,7 @@ import { SwapiService } from "../../../services/swapi.service";
 import { MD_CARD_DIRECTIVES } from "@angular2-material/card/card";
 import { MD_BUTTON_DIRECTIVES } from "@angular2-material/button/button";
 import { MD_LIST_DIRECTIVES } from "@angular2-material/list/list";
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -16,7 +17,7 @@ export class FilmsComponent implements OnInit {
 
   private films: Array<FilmModel>;
 
-  constructor(private swapiService: SwapiService) { }
+  constructor(private swapiService: SwapiService, private router: Router) { }
 
   ngOnInit() {
     this.getFilms();
@@ -32,6 +33,16 @@ export class FilmsComponent implements OnInit {
         error => this.handleError,
         () => console.log('Done')
       );
+  }
+
+  private showDetail(url: string) {
+    let urlArray = url.split( '/' );
+    let id = urlArray[5];
+    this.router.navigate(['/resources/films/', id]);
+  }
+
+  private goBack() {
+    this.router.navigate(['/resources']);
   }
 
   private handleError(error: any) {

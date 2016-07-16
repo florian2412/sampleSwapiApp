@@ -1,1 +1,15 @@
-<h1>Film-detail component</h1>
+<md-card *ngIf="currentFilm">
+
+  <md-card-title>{{ currentFilm.title }}</md-card-title>
+
+  <md-card-content>
+
+    {{ currentFilm | json }}
+
+  </md-card-content>
+
+  <md-card-actions layout="row" layout-align="end center">
+    <button md-raised-button color="primary" (click)="goBack()">Back</button>
+  </md-card-actions>
+
+</md-card>

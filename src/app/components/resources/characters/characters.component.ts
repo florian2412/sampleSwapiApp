@@ -38,8 +38,6 @@ export class CharactersComponent implements OnInit {
   private showDetail(url: string) {
     let urlArray = url.split( '/' );
     let id = urlArray[5];
-    console.log(urlArray);
-    console.log(id);
     this.router.navigate(['/resources/characters/', id]);
   }
 

@@ -1,13 +1,10 @@
-<md-card>
+<md-card *ngIf="currentCharacter">
 
-  <md-card-title>Character detail</md-card-title>
+  <md-card-title>{{ currentCharacter.name }}</md-card-title>
 
   <md-card-content>
 
-    <div *ngIf="currentCharacter">
-      {{ currentCharacter | json }}
-    </div>
-
+    {{ currentCharacter | json }}
 
   </md-card-content>
 
@@ -16,6 +13,3 @@
   </md-card-actions>
 
 </md-card>
-
-
-
