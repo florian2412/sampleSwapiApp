@@ -6,18 +6,16 @@ import { StarshipModel } from "../../model/starship.model";
 import { SpecieModel } from "../../model/specie.model";
 import { VehiculeModel } from "../../model/vehicule.model";
 import { SwapiService } from '../../services/swapi.service';
+import { ResourcesEnum } from '../../utils/resources.enum';
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-
-import { ResourcesEnum } from '../../utils/resources.enum';
-
-
+import { ROUTER_DIRECTIVES } from "@angular/router";
 
 @Component({
   moduleId: module.id,
   selector: 'ns-resources',
   templateUrl: 'resources.component.html',
-  directives: [ MD_BUTTON_DIRECTIVES, MD_LIST_DIRECTIVES ]
+  directives: [ ROUTER_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_LIST_DIRECTIVES ]
 })
 
 export class ResourcesComponent {
