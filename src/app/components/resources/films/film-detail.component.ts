@@ -7,6 +7,7 @@ import { ROUTER_DIRECTIVES } from "@angular/router";
     templateUrl: 'film-detail.component.html',
     directives: [ ROUTER_DIRECTIVES ]
 })
+
 export class FilmDetailComponent implements OnInit {
     constructor() { }
 

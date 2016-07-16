@@ -5,10 +5,10 @@ import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 import { CharacterModel } from "../../../model/character.model";
 import { SwapiService } from '../../../services/swapi.service';
 import { ResourcesEnum } from "../../../utils/resources.enum";
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
-  selector: 'my-characters',
   templateUrl: 'characters.component.html',
   directives: [ MD_CARD_DIRECTIVES, MD_LIST_DIRECTIVES, MD_BUTTON_DIRECTIVES ]
 })
@@ -17,7 +17,7 @@ export class CharactersComponent implements OnInit {
 
   private characters: Array<CharacterModel>;
 
-  constructor(private swapiService: SwapiService) { }
+  constructor(private swapiService: SwapiService, private router: Router) { }
 
   ngOnInit() {
     this.getCharacters();
@@ -33,6 +33,22 @@ export class CharactersComponent implements OnInit {
         error => this.handleError,
         () => console.log('Done')
       );
+  }
+
+  private showDetail(url: string) {
+    let urlArray = url.split( '/' );
+    let id = urlArray[5];
+    console.log(urlArray);
+    console.log(id);
+    this.router.navigate(['/resources/characters/', id]);
+  }
+
+  private goHome() {
+    this.router.navigate(['/home']);
+  }
+
+  private goBack() {
+    this.router.navigate(['/resources']);
   }
 
   private handleError(error: any) {
