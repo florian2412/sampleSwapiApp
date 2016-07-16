@@ -1,77 +1,143 @@
-<!--
-<div>
-  <label>Character's id to search</label>
-  <input [(ngModel)]="idCharacterToSearch">
-  <button md-raised-button color="primary" (click)="getCharacterById(idCharacterToSearch)">Get character</button>
-</div>
--->
-
 <md-card>
 
-<h1>Resources Component</h1>
+  <md-card-title>Choose a resource</md-card-title>
+  <!--<md-card-subtitle>Choose a resource</md-card-subtitle>-->
 
-<br>
+  <md-card-content>
 
-<div>
-  <button md-raised-button color="primary" (click)="getCharacters()">Get characters</button>
-  <button md-raised-button color="primary" (click)="getFilms()">Get films</button>
-  <button md-raised-button color="primary" (click)="getPlanets()">Get planets</button>
-  <button md-raised-button color="primary" (click)="getSpecies()">Get species</button>
-  <button md-raised-button color="primary" (click)="getStarships()">Get starships</button>
-  <button md-raised-button color="primary" (click)="getVehicules()">Get vehicules</button>
-</div>
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>Characters</md-card-title-text>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <button md-raised-button color="primary" (click)="goTo('characters')">GO</button>
+      </md-card-actions>
+    </md-card>
 
-<br>
+    <br>
 
-<div [hidden]="charactersIsHidden">
-<!--<div *ngIf="characters">-->
-  <md-nav-list>
-    <md-list-item *ngFor="let character of characters">
-      <a md-line href="showInfo(character)">{{ character.name }}</a>
-    </md-list-item>
-  </md-nav-list>
-</div>
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>Films</md-card-title-text>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <button md-raised-button color="primary" (click)="goTo('films')">GO</button>
+      </md-card-actions>
+    </md-card>
 
-<div [hidden]="filmsIsHidden">
-  <md-nav-list>
-    <md-list-item *ngFor="let film of films">
-      <a md-line href="showInfo(film)">{{ film.title }}</a>
-    </md-list-item>
-  </md-nav-list>
-</div>
+    <br>
 
 
-<div [hidden]="planetsIsHidden">
-  <md-nav-list>
-    <md-list-item *ngFor="let planet of planets">
-      <a md-line href="showInfo(character)">{{ planet.name }}</a>
-    </md-list-item>
-  </md-nav-list>
-</div>
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>Planets</md-card-title-text>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <button md-raised-button color="primary" (click)="goTo('planets')">GO</button>
+      </md-card-actions>
+    </md-card>
 
-<div [hidden]="speciesIsHidden">
-  <md-nav-list>
-    <md-list-item *ngFor="let specie of species">
-      <a md-line href="showInfo(character)">{{ specie.name }}</a>
-    </md-list-item>
-  </md-nav-list>
-</div>
+    <br>
 
-<div [hidden]="starshipsIsHidden">
-  <md-nav-list>
-    <md-list-item *ngFor="let starship of starships">
-      <a md-line href="showInfo(character)">{{ starship.name }}</a>
-    </md-list-item>
-  </md-nav-list>
-</div>
 
-<div [hidden]="vehiclesIsHidden">
-  <md-nav-list>
-    <md-list-item *ngFor="let vehicle of vehicles">
-      <a md-line href="showInfo(vehicle)">{{ vehicle.name }}</a>
-    </md-list-item>
-  </md-nav-list>
-</div>
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>Species</md-card-title-text>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <button md-raised-button color="primary" (click)="goTo('species')">GO</button>
+      </md-card-actions>
+    </md-card>
 
+    <br>
+
+
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>Starships</md-card-title-text>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <button md-raised-button color="primary" (click)="goTo('starships')">GO</button>
+      </md-card-actions>
+    </md-card>
+
+    <br>
+
+
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>Vehicles</md-card-title-text>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <button md-raised-button color="primary" (click)="goTo('vehicles')">GO</button>
+      </md-card-actions>
+    </md-card>
+
+    <!--
+    <div>
+      <button md-raised-button color="primary" (click)="goTo('characters')">Characters</button>
+      <button md-raised-button color="primary" (click)="goTo('films')">Films</button>
+      <button md-raised-button color="primary" (click)="goTo('planets')">Planets</button>
+      <button md-raised-button color="primary" (click)="goTo('species')">Species</button>
+      <button md-raised-button color="primary" (click)="goTo('starships')">Starships</button>
+      <button md-raised-button color="primary" (click)="goTo('vehicles')">Vehicles</button>
+    </div>
+    -->
+
+  </md-card-content>
+
+
+
+  <!--<div *ngIf="characters">-->
+  <!--
+  <div [hidden]="charactersIsHidden">
+    <md-nav-list>
+      <md-list-item *ngFor="let character of characters">
+        <a md-line href="showInfo(character)">{{ character.name }}</a>
+      </md-list-item>
+    </md-nav-list>
+  </div>
+
+  <div [hidden]="filmsIsHidden">
+    <md-nav-list>
+      <md-list-item *ngFor="let film of films">
+        <a md-line href="showInfo(film)">{{ film.title }}</a>
+      </md-list-item>
+    </md-nav-list>
+  </div>
+
+
+  <div [hidden]="planetsIsHidden">
+    <md-nav-list>
+      <md-list-item *ngFor="let planet of planets">
+        <a md-line href="showInfo(character)">{{ planet.name }}</a>
+      </md-list-item>
+    </md-nav-list>
+  </div>
+
+  <div [hidden]="speciesIsHidden">
+    <md-nav-list>
+      <md-list-item *ngFor="let specie of species">
+        <a md-line href="showInfo(character)">{{ specie.name }}</a>
+      </md-list-item>
+    </md-nav-list>
+  </div>
+
+  <div [hidden]="starshipsIsHidden">
+    <md-nav-list>
+      <md-list-item *ngFor="let starship of starships">
+        <a md-line href="showInfo(character)">{{ starship.name }}</a>
+      </md-list-item>
+    </md-nav-list>
+  </div>
+
+  <div [hidden]="vehiclesIsHidden">
+    <md-nav-list>
+      <md-list-item *ngFor="let vehicle of vehicles">
+        <a md-line href="showInfo(vehicle)">{{ vehicle.name }}</a>
+      </md-list-item>
+    </md-nav-list>
+  </div>
+-->
 
 </md-card>

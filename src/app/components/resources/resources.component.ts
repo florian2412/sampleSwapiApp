@@ -9,13 +9,14 @@ import { SwapiService } from '../../services/swapi.service';
 import { ResourcesEnum } from '../../utils/resources.enum';
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { ROUTER_DIRECTIVES } from "@angular/router";
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+import { ROUTER_DIRECTIVES, Router } from "@angular/router";
 
 @Component({
   moduleId: module.id,
   selector: 'my-resources',
   templateUrl: 'resources.component.html',
-  directives: [ ROUTER_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_LIST_DIRECTIVES ]
+  directives: [ ROUTER_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_LIST_DIRECTIVES, MD_CARD_DIRECTIVES ]
 })
 
 export class ResourcesComponent implements OnInit {
@@ -39,9 +40,18 @@ export class ResourcesComponent implements OnInit {
   starshipsIsHidden: boolean = true;
   vehiclesIsHidden: boolean = true;
 
-  constructor(private swapiService: SwapiService) {}
+  constructor(private swapiService: SwapiService, private router: Router) {}
 
   ngOnInit() { }
+
+  /**
+   * Navigation
+   *
+   * @param resource
+   */
+  goTo(resource: string) {
+    this.router.navigate(['/resources/' + resource]);
+  }
 
   getCharacterById(id: number) {
     return this.swapiService

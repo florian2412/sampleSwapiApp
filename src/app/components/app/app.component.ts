@@ -9,7 +9,7 @@ import { MdIcon, MdIconRegistry } from '@angular2-material/icon';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-root',
+  selector: 'my-app',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
   directives: [ ROUTER_DIRECTIVES, ResourcesComponent, MD_CARD_DIRECTIVES, MD_TOOLBAR_DIRECTIVES, MD_SIDENAV_DIRECTIVES, MdIcon ],
