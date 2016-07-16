@@ -4,16 +4,21 @@
       {{ title }}
   </md-toolbar>
 
+  <router-outlet></router-outlet>
+  <!-- the component's template will be inserted here-->
+
+  <!--<button (onClick)="goToResources()">Go to resources</button>-->
+
   <!--
   <nav>
     <a [routerLink]="['resources']">Resources</a>
     <a [routerLink]="['contact']">Contact</a>
     <a [routerLink]="['about']">About</a>
   </nav>
-  -->
 
-  <router-outlet></router-outlet>
-  <!-- the component's template will be inserted here-->
+
+
+
 
   <!--<div class="card-container">
     <md-card>

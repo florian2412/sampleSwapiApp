@@ -27,5 +27,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() { }
 
+  /*
+  goToResources() {
+    this.router.navigate(['resources']);
+  }
+  */
 
 }

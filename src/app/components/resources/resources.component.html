@@ -5,6 +5,9 @@
   <button md-raised-button color="primary" (click)="getCharacterById(idCharacterToSearch)">Get character</button>
 </div>
 -->
+
+<md-card>
+
 <h1>Resources Component</h1>
 
 <br>
@@ -62,12 +65,13 @@
   </md-nav-list>
 </div>
 
-<div [hidden]="vehiculesIsHidden">
+<div [hidden]="vehiclesIsHidden">
   <md-nav-list>
-    <md-list-item *ngFor="let vehicule of vehicules">
-      <a md-line href="showInfo(character)">{{ vehicule.name }}</a>
+    <md-list-item *ngFor="let vehicle of vehicles">
+      <a md-line href="showInfo(vehicle)">{{ vehicle.name }}</a>
     </md-list-item>
   </md-nav-list>
 </div>
 
 
+</md-card>

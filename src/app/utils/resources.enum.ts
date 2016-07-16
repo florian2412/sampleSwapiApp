@@ -4,5 +4,5 @@ export enum ResourcesEnum {
   PLANETS = <any>"planets",
   SPECIES = <any>"species",
   STARSHIPS = <any>"starships",
-  VEHICULES = <any>"vehicles"
+  VEHICLES = <any>"vehicles"
 }

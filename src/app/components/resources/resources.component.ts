@@ -23,7 +23,7 @@ export class ResourcesComponent implements OnInit {
   characters: Array<CharacterModel>;
   films: Array<FilmModel>;
   planets: Array<PlanetModel>;
-  vehicules: Array<VehiculeModel>;
+  vehicles: Array<VehiculeModel>;
   species: Array<SpecieModel>;
   starships: Array<StarshipModel>;
 
@@ -37,7 +37,7 @@ export class ResourcesComponent implements OnInit {
   planetsIsHidden: boolean = true;
   speciesIsHidden: boolean = true;
   starshipsIsHidden: boolean = true;
-  vehiculesIsHidden: boolean = true;
+  vehiclesIsHidden: boolean = true;
 
   constructor(private swapiService: SwapiService) {}
 
@@ -109,11 +109,11 @@ export class ResourcesComponent implements OnInit {
   getVehicules() {
     this.hideAllResources();
     return this.swapiService
-      .getResourceList(ResourcesEnum.VEHICULES)
+      .getResourceList(ResourcesEnum.VEHICLES)
       .subscribe(
         response => {
-          this.vehicules = response.results;
-          this.vehiculesIsHidden = false;
+          this.vehicles = response.results;
+          this.vehiclesIsHidden = false;
         },
         error => this.handleError(error),
         () => console.log('Done')
@@ -154,7 +154,7 @@ export class ResourcesComponent implements OnInit {
     this.planetsIsHidden = true;
     this.speciesIsHidden = true;
     this.starshipsIsHidden = true;
-    this.vehiculesIsHidden = true;
+    this.vehiclesIsHidden = true;
   }
 
   private handleError(error: any) {
