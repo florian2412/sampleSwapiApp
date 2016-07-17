@@ -7,11 +7,23 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  '@angular2-material': 'vendor/@angular2-material'
+  '@angular2-material': 'vendor/@angular2-material',
+  'materialize': 'vendor/materialize-css',
+  'angular2-materialize': 'vendor/angular2-materialize',
+  'jquery': 'vendor/jquery'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'materialize': {
+    "format": "global",
+    "main": "dist/js/materialize",
+    "defaultExtension": "js"
+  },
+  'angular2-materialize': {
+    "main": "dist/index",
+    "defaultExtension": "js"
+  }
 };
 
 /** Put the names of any of your Material components here */

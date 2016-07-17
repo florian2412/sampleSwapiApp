@@ -5,6 +5,7 @@ import { HTTP_PROVIDERS } from "@angular/http";
 import { APP_ROUTER_PROVIDERS } from './app/app.routes';
 import { SwapiService } from "./app/services/swapi.service";
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
+import "angular2-materialize";
 import 'rxjs/add/operator/map';
 
 if (environment.production) {
