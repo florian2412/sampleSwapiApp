@@ -1,13 +1,26 @@
-<nav>
-  <div class="nav-wrapper">
-    <a href="" class="brand-logo center">{{ title }}</a>
-    <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li><a href="" [routerLink]="['/home']">Home</a></li>
-      <li><a href="" [routerLink]="['/resources']">Resources</a></li>
-      <li><a href="" [routerLink]="['/contact']">Contact</a></li>
-      <li><a href="" [routerLink]="['/about']">About</a></li>
-    </ul>
-  </div>
-</nav>
+<header>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="" class="brand-logo center">{{ title }}</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="" [routerLink]="['/home']">Home</a></li>
+        <li><a href="" [routerLink]="['/resources']">Resources</a></li>
+        <li><a href="" [routerLink]="['/contact']">Contact</a></li>
+        <li><a href="" [routerLink]="['/about']">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-<router-outlet></router-outlet>
+<body>
+<div class="container">
+
+  <router-outlet></router-outlet>
+  <!-- Page Content goes here -->
+
+</div>
+</body>
+
+<footer>
+
+</footer>
