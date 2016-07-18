@@ -6,6 +6,7 @@ import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 import { MD_TOOLBAR_DIRECTIVES } from '@angular2-material/toolbar';
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
 import { MdIcon, MdIconRegistry } from '@angular2-material/icon';
+import { MaterializeDirective } from "angular2-materialize";
 
 @Component({
   moduleId: module.id,
@@ -20,7 +21,7 @@ export class AppComponent implements OnInit {
   title: string;
 
   constructor(titlePage: Title) {
-    let title = "Sample Angular2 + Swapi";
+    let title = "Angular2 + Star Wars API + Materialize";
     titlePage.setTitle(title);
     this.title = title;
   }

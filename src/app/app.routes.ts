@@ -14,7 +14,8 @@ import { StarshipsComponent } from "./components/resources/starships/starships.c
 import { VehiclesComponent } from "./components/resources/vehicles/vehicles.component";
 
 const routes: RouterConfig = [
-  { path: '', component: AppComponent },
+
+  { path: '', component: MainComponent },
   { path: 'home', component: MainComponent },
   { path: 'resources', component: ResourcesComponent },
   { path: 'resources/characters', component: CharactersComponent },

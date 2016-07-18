@@ -1,29 +1,13 @@
-<md-sidenav-layout fullscreen>
+<nav>
+  <div class="nav-wrapper">
+    <a href="" class="brand-logo center">{{ title }}</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li><a href="" [routerLink]="['/home']">Home</a></li>
+      <li><a href="" [routerLink]="['/resources']">Resources</a></li>
+      <li><a href="" [routerLink]="['/contact']">Contact</a></li>
+      <li><a href="" [routerLink]="['/about']">About</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <md-toolbar color="primary">
-      {{ title }}
-  </md-toolbar>
-
-  <router-outlet></router-outlet>
-  <!-- the component's template will be inserted here-->
-
-  <!--<button (onClick)="goToResources()">Go to resources</button>-->
-
-  <!--
-  <nav>
-    <a [routerLink]="['resources']">Resources</a>
-    <a [routerLink]="['contact']">Contact</a>
-    <a [routerLink]="['about']">About</a>
-  </nav>
-
-
-
-
-
-  <!--<div class="card-container">
-    <md-card>
-      <ns-resources></ns-resources>
-    </md-card>
-  </div>-->
-
-</md-sidenav-layout>
+<router-outlet></router-outlet>
